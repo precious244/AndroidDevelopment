@@ -13,8 +13,14 @@ class JoblistAdapter(private val joblistList: ArrayList<JoblistModel>):
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(ItemJoblistBinding.inflate(LayoutInflater.from(parent.context), parent, false))
-          }
+        return ViewHolder(
+            ItemJoblistBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+        )
+    }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val joblist =  joblistList[position]

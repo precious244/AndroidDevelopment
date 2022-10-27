@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background2"
+    tools:context=".activity.NewsDetailActivity">
+
+    <TextView
+        android:id="@+id/newsTitle"
+        android:layout_marginTop="12dp"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="24dp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/newsAuthor"
+        android:layout_below="@id/newsTitle"
+        android:layout_marginTop="12dp"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="italic"/>
+
+    <ImageView
+        android:id="@+id/newsImage"
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="12dp"
+        android:layout_below="@id/newsAuthor"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/newsDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/newsImage"
+        android:textColor="@color/black"
+        android:padding="10dp"
+        android:textSize="12dp"/>
+
+    <TextView
+        android:id="@+id/newsPublished"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_below="@id/newsDesc"
+        android:textColor="@color/black"
+        android:padding="10dp"
+        android:textSize="10dp"/>
+
+    <Button
+        android:layout_below="@id/newsPublished"
+        android:id="@+id/btnFavorites"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/softblue"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Add to Favorites"
+        android:paddingHorizontal="24dp"
+        android:layout_marginHorizontal="24dp"
+        android:textColor="@color/black"
+        android:textSize="12dp" />
+
+
+</RelativeLayout>

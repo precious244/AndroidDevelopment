@@ -6,8 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import My.practice.R
+import My.practice.adapter.JobAdapter
+import My.practice.adapter.JoblistAdapter
 import My.practice.databinding.FragmentApplicationBinding
 import My.practice.databinding.FragmentHomeBinding
+import My.practice.model.JoblistModel
+import androidx.recyclerview.widget.LinearLayoutManager
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +25,7 @@ private const val ARG_PARAM2 = "param2"
  */
 class ApplicationFragment : Fragment() {
     private lateinit var binding: FragmentApplicationBinding
+    private lateinit var adapter: JobAdapter
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -41,7 +46,27 @@ class ApplicationFragment : Fragment() {
         binding = FragmentApplicationBinding.inflate(inflater, container, false)
         return binding.root
     }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
+        binding.joblist.layoutManager = LinearLayoutManager(requireActivity())
+
+        val joblistList = ArrayList<JoblistModel>()
+        joblistList.add(JoblistModel("Marketing",R.drawable.fb, "Facebook, Inc"))
+        joblistList.add(JoblistModel("Data Analyst", R.drawable.fb, "Facebook, Inc"))
+        joblistList.add(JoblistModel("Product Manager", R.drawable.fb, "Facebook, Inc"))
+        joblistList.add(JoblistModel("Marketing", R.drawable.fb, "Facebook, Inc"))
+        joblistList.add(JoblistModel("Data Analyst", R.drawable.fb, "Facebook, Inc"))
+        joblistList.add(JoblistModel("Product Manager", R.drawable.fb, "Facebook, Inc"))
+        joblistList.add(JoblistModel("Marketing", R.drawable.fb, "Facebook, Inc"))
+        joblistList.add(JoblistModel("Data Analyst", R.drawable.fb, "Facebook, Inc"))
+        joblistList.add(JoblistModel("Product Manager", R.drawable.fb, "Facebook, Inc"))
+
+
+        adapter = JobAdapter(joblistList)
+
+        binding.joblist.adapter = adapter
+    }
     companion object {
         /**
          * Use this factory method to create a new instance of

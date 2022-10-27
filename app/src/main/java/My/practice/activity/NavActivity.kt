@@ -2,13 +2,13 @@ package My.practice.activity
 
 import My.practice.R
 import My.practice.databinding.ActivityNavBinding
-import My.practice.fragment.ApplicationFragment
-import My.practice.fragment.HomeFragment
-import My.practice.fragment.ProfileFragment
+import My.practice.fragment.*
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class NavActivity : AppCompatActivity() {
     private lateinit var binding: ActivityNavBinding
 
@@ -32,6 +32,14 @@ class NavActivity : AppCompatActivity() {
                 R.id.menu_profile -> {
                     //open fragment profile
                     showFragment(R.id.container1, ProfileFragment.newInstance("", ""))
+                }
+                R.id.menu_news -> {
+                    //open fragment profile
+                    showFragment(R.id.container1, NewsFragment.newInstance("", ""))
+                }
+                R.id.menu_Favorite -> {
+                    //open fragment profile
+                    showFragment(R.id.container1, FavoriteFragment.newInstance("", ""))
                 }
             }
             true

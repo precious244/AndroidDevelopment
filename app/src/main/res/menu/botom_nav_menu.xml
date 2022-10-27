@@ -12,4 +12,12 @@
         android:enabled="true"
         android:icon="@drawable/ic_baseline_person_24"
         android:title="Profile"/>
+    <item android:id="@+id/menu_news"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_newspaper_24"
+        android:title="News"/>
+    <item android:id="@+id/menu_Favorite"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_favorite_24"
+        android:title="News"/>
 </menu>
