@@ -20,6 +20,7 @@ class NewsDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityNewsDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         val article = intent.getParcelableExtra<Article>("article")
         if (article != null){
             Glide.with(binding.newsImage.context).load(article.urlToImage).into(binding.newsImage)
@@ -27,12 +28,11 @@ class NewsDetailActivity : AppCompatActivity() {
             binding.newsAuthor.text = article.author
             binding.newsDesc.text = article.description
             binding.newsPublished.text = article.publishedAt
+            binding.btnFavorite.setOnClickListener {
+                viewModel.insertNewsLiveData(article)
+            }
+            setObserver()
         }
-
-        binding.btnFavorites.setOnClickListener {
-            viewModel.insertNewsLiveData(article)
-        }
-        setObserver()
     }
 
     private fun setObserver() {

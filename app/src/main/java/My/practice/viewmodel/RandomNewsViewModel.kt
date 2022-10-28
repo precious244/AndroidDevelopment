@@ -19,10 +19,10 @@ class RandomNewsViewModel @Inject constructor(
     private val newsRepository: NewsRepository
 )
 : ViewModel() {
-    private var randomNewsLiveData = MutableLiveData<NewsResponse>()
+    private val randomNewsLiveData = MutableLiveData<NewsResponse>()
     private val compositeDisposable = CompositeDisposable()
     private val listArticleLiveData = MutableLiveData<List<Article>>()
-    val insertNewsLiveData = MutableLiveData<ViewState<Boolean>>()
+    private val insertNewsLiveData = MutableLiveData<ViewState<Boolean>>()
 
     fun getRandomNews(key: String){
         compositeDisposable.add(
@@ -42,7 +42,7 @@ class RandomNewsViewModel @Inject constructor(
         )
     }
 
-    fun insertNews(article: Article){
+    fun insertNewsLiveData(article: Article){
         compositeDisposable.add(
             newsRepository.insertNews(article)
                 .subscribeOn(Schedulers.newThread())
@@ -60,6 +60,8 @@ class RandomNewsViewModel @Inject constructor(
     }
 
     fun getRandomNewsLiveData(): MutableLiveData<List<Article>> = listArticleLiveData
+
+    fun getInsertNewsLiveData(): MutableLiveData<ViewState<Boolean>> = insertNewsLiveData
 
     override fun onCleared() {
         super.onCleared()

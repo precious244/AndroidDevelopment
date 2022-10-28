@@ -18,13 +18,27 @@
         android:textSize="24dp"
         android:layout_centerHorizontal="true"/>
 
+    <Button
+        android:layout_below="@id/newsAuthor"
+        android:id="@+id/btnFavorite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/softblue"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Add to Favorites"
+        android:paddingHorizontal="24dp"
+        android:layout_marginHorizontal="24dp"
+        android:textColor="@color/black"
+        android:textSize="12dp" />
+
     <TextView
         android:id="@+id/newsAuthor"
         android:layout_below="@id/newsTitle"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="10dp"
         android:padding="10dp"
         android:textColor="@color/black"
-        android:textSize="10dp"
+        android:textSize="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textStyle="italic"/>
@@ -34,7 +48,7 @@
         android:layout_width="match_parent"
         android:padding="10dp"
         android:layout_height="250dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:layout_below="@id/newsAuthor"
         android:layout_centerHorizontal="true"/>
 
@@ -56,19 +70,7 @@
         android:padding="10dp"
         android:textSize="10dp"/>
 
-    <Button
-        android:layout_below="@id/newsPublished"
-        android:id="@+id/btnFavorites"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/softblue"
-        android:gravity="center"
-        android:padding="10dp"
-        android:text="Add to Favorites"
-        android:paddingHorizontal="24dp"
-        android:layout_marginHorizontal="24dp"
-        android:textColor="@color/black"
-        android:textSize="12dp" />
+
 
 
 </RelativeLayout>
